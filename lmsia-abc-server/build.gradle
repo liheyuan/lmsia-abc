@@ -1,0 +1,12 @@
+
+dependencies {
+    compile project(':lmsia-abc-common')
+
+    compile 'org.springframework.boot:spring-boot-starter-jdbc'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+
+    compile 'com.coder4.sbmvt:thrift-server:0.0.5'
+
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}

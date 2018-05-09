@@ -1,0 +1,71 @@
+buildscript {
+
+    ext {
+        springBootVersion = '1.5.6.RELEASE'
+    }
+ 
+    repositories {
+        maven {
+            credentials {
+                username "$mavenUser"
+                password "$mavenPass"
+            }
+            url 'http://maven.coder4.com/nexus/content/groups/public'
+        }
+    }
+ 
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+
+}
+
+subprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'maven'
+    apply plugin: 'org.springframework.boot'
+    
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    group = 'com.coder4.sbmvt'
+    version = '0.0.1'
+    
+    repositories {
+        maven {
+            credentials {
+                username "$mavenUser"
+                password "$mavenPass"
+            }
+            url 'http://maven.coder4.com/nexus/content/groups/public'
+        }
+
+    }
+
+    // maven deploy config start
+    configurations {
+        deployerJars
+    }
+
+    uploadArchives {
+        repositories.mavenDeployer {
+            configuration = configurations.deployerJars
+            repository(url: "http://maven.coder4.com/nexus/content/repositories/releases/") {
+                authentication(userName: "$mavenUser", password: "$mavenPass")
+            }
+            snapshotRepository(url: "http://maven.coder4.com/nexus/content/repositories/snapshots/") {
+                authentication(userName: "$mavenUser", password: "$mavenPass")
+            }
+        }
+    }
+
+    dependencies {
+        deployerJars "org.apache.maven.wagon:wagon-http:2.2"
+    }
+
+    // maven deploy config end
+
+}
+

@@ -1,0 +1,28 @@
+
+# Eureka Config
+eureka.client.serviceUrl.defaultZone: http://eureka-server-test:8761/eureka/
+
+# Profiles
+spring:
+  profiles.active: test,local
+---
+spring:
+  profiles: local
+
+# log config file
+logging.config: classpath:logback.local.xml
+
+---
+spring:
+  profiles: test
+
+# log config file
+logging.config: classpath:logback.test.xml
+
+---
+spring:
+  profiles: online
+
+# Eureka Config Online
+eureka:
+  client.serviceUrl.defaultZone: http://eureka-server-online:8761/eureka/

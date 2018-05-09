@@ -1,0 +1,13 @@
+bootRepackage {
+    enabled = false
+}
+
+dependencies {
+    compile project(':lmsia-abc-common') 
+
+    compile 'org.springframework.boot:spring-boot-autoconfigure'
+
+    compile 'com.coder4.sbmvt:thrift-client:0.0.3'
+
+}
+
