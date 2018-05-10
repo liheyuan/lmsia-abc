@@ -12,24 +12,6 @@ lmsiaAbcThriftServer:
   port: 3000
   name: lmsia-abc-thrift-server
 
-# Eureka Config
-eureka:
-  instance:
-    appname: ${lmsiaAbcThriftServer.name}
-    nonSecurePort: ${lmsiaAbcThriftServer.port}
-    lease-renewal-interval-in-seconds: 5
-    lease-expiration-duration-in-seconds: 10
-  client.serviceUrl.defaultZone: http://eureka-server-test:8761/eureka/
-
-# DB Config
-lmsiaAbc.datasource:
-  # For more see http://tomcat.apache.org/tomcat-7.0-doc/jdbc-pool.html#Common_Attributes
-  username: sbmvt
-  password: hehehe 
-  testOnBorrow: true
-  validationQuery: SELECT 1
-  url: jdbc:mysql://sbmvt-mysql-test:3306/lmsia-abc
-
 # Profiles
 spring:
   profiles.active: test,local
@@ -53,9 +35,3 @@ spring:
 # log config file
 logging.config: classpath:logback.online.xml
 
-# Eureka Config Online
-eureka:
-  client.serviceUrl.defaultZone: http://eureka-server-online:8761/eureka/
-
-# DB Config Online
-lmsiaAbc.datasource.url: jdbc:mysql://sbmvt-mysql-online:3306/lmsia-abc

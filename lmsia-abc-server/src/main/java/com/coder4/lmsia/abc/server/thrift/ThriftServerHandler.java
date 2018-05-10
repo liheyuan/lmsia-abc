@@ -1,9 +1,3 @@
-/**
- * @(#)RpcHandler.java, Jul 31, 2017.
- * <p>
- * Copyright 2017 coder4.com. All rights reserved.
- * CODER4.COM PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- */
 package com.coder4.lmsia.abc.server.thrift;
 
 import com.coder4.lmsia.abc.thrift.LmsiaAbcThrift;

@@ -6,20 +6,20 @@
  */
 package com.coder4.lmsia.abc.client;
 
-import com.coder4.lmsia.abc.client.LmsiaAbcEurekaClientBuilder;
-import com.coder4.lmsia.abc.thrift.LmsiaAbcThrift;
-import com.coder4.sbmvt.thrift.client.ThriftClient;
+import com.coder4.lmsia.abc.thrift.LmsiaAbcThrift.Client;
+import com.coder4.lmsia.thrift.client.K8ServiceKey;
+import com.coder4.lmsia.thrift.client.ThriftClient;
 
 /**
  * @author coder4
  */
-public class LmsiaAbcEurekaClientTest {
+public class LmsiaAbcK8ServiceClientTest {
 
     public static void main(String[] args) throws InterruptedException {
-        String serviceName = "lmsia-abc-thrift-server";
-        ThriftClient<LmsiaAbcThrift.Client> client = LmsiaAbcEurekaClientBuilder.buildClient(serviceName);
+        K8ServiceKey k8ServiceKey = new K8ServiceKey("lmsia-abc-server.test", 3000);
+        ThriftClient<Client> client = LmsiaK8ServiceClientBuilder.buildClient(k8ServiceKey);
         long startTime = System.currentTimeMillis();
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 50000; i++) {
             try {
                 String str = client.call(cli -> cli.sayHi());
             } catch (Exception e) {

@@ -7,7 +7,8 @@
 package com.coder4.lmsia.abc.client;
 
 import com.coder4.lmsia.abc.thrift.LmsiaAbcThrift;
-import com.coder4.sbmvt.thrift.client.ThriftClient;
+import com.coder4.lmsia.abc.thrift.LmsiaAbcThrift.Client;
+import com.coder4.lmsia.thrift.client.ThriftClient;
 
 import java.util.concurrent.Future;
 
@@ -17,11 +18,11 @@ import java.util.concurrent.Future;
 public class LmsiaAbcEasyClientTest {
 
     public static void test1() {
-        ThriftClient<LmsiaAbcThrift.Client> client = LmsiaAbcEasyClientBuilder
+        ThriftClient<Client> client = LmsiaAbcEasyClientBuilder
                 .buildClient("127.0.0.1", 3000);
 
         long startTime = System.currentTimeMillis();
-        for (int i = 0; i<10000; i++) {
+        for (int i = 0; i < 50000; i++) {
             String ret = client.call(cli -> cli.sayHi());
         }
         long endTime = System.currentTimeMillis();
@@ -37,7 +38,7 @@ public class LmsiaAbcEasyClientTest {
         System.out.println(fRet.get());
     }
 
-    public static void main(String [] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         test1();
         //test2();
     }
