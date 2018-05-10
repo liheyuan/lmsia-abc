@@ -8,7 +8,6 @@ import com.coder4.lmsia.thrift.client.K8ServiceKey;
 import com.coder4.lmsia.thrift.client.ThriftClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
@@ -43,7 +42,6 @@ public class LmsiaAbcClientConfiguration {
 
     @Bean(name = "lmsiaAbcThriftClient")
     @ConditionalOnMissingBean(name = "lmsiaAbcThriftClient")
-    @ConditionalOnBean(name = "lmsiaAbcK8ServiceKey")
     public ThriftClient<LmsiaAbcThrift.Client> k8ServiceClient(
             @Qualifier("lmsiaAbcK8ServiceKey") K8ServiceKey k8ServiceKey) {
         LOG.info("######## LmsiaAbcClientConfiguration ########");
@@ -53,13 +51,13 @@ public class LmsiaAbcClientConfiguration {
 
     @Bean(name = "lmsiaAbcK8ServiceKey")
     @Profile("test")
-    K8ServiceKey k8ServiceKeyForTest() {
+    public K8ServiceKey k8ServiceKeyForTest() {
         return new K8ServiceKey(String.format("%s.test", K8_SERVICE_NAME), K8_SERVICE_PORT);
     }
 
     @Bean(name = "lmsiaAbcK8ServiceKey")
     @Profile("online")
-    K8ServiceKey k8ServiceKeyForOnline() {
+    public K8ServiceKey k8ServiceKeyForOnline() {
         return new K8ServiceKey(String.format("%s.online", K8_SERVICE_NAME), K8_SERVICE_PORT);
     }
 

@@ -1,3 +1,5 @@
 dependencies {
+    compile project(':lmsia-abc-client')
+
     compile 'org.springframework.boot:spring-boot-starter-web'
 }
