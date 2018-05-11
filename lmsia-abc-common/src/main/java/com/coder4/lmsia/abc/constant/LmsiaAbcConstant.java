@@ -12,6 +12,6 @@ public class LmsiaAbcConstant {
     // TODO remove to thrift-common
     public static final int K8_SERVICE_PORT = 3000;
 
-    public static final String REST_API = "/lmsia-abc/{client:api|iphone|ipad|android|win|small}";
+    public static final String REST_API = "/lmsia-abc/{client:api|iphone|ipad|android|win}";
 
 }
