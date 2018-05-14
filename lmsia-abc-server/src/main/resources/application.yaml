@@ -19,19 +19,12 @@ spring:
 spring:
   profiles: local
 
-# log config file
-logging.config: classpath:logback.local.xml
 ---
 spring:
   profiles: test
-
-# log config file
-logging.config: classpath:logback.test.xml
 
 ---
 spring:
   profiles: online
 
-# log config file
-logging.config: classpath:logback.online.xml
 

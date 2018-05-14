@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration scan="true">
+<configuration>
+
+    <!-- For console -->
     <appender name="ConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <charset>UTF-8</charset>
-            <Pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5level] [%thread] [%logger] %msg %n</Pattern>
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%thread] [%logger] %msg %n</Pattern>
         </encoder>
     </appender>
 
-    <logger name="com.coder4" level="DEBUG" />
-
+    <!-- Console only for all job profiles -->
     <root level="INFO">
         <appender-ref ref="ConsoleAppender"/>
     </root>
