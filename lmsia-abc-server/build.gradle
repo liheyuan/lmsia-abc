@@ -5,6 +5,7 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
 
     compile 'com.github.liheyuan:lmsia-thrift-server:0.0.1'
+    compile 'com.github.liheyuan:lmsia-commons-http:0.0.1'
 
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
