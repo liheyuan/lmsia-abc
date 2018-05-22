@@ -3,9 +3,11 @@ dependencies {
     compile project(':lmsia-abc-common')
 
     compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-actuator'
 
-    compile 'com.github.liheyuan:lmsia-thrift-server:0.0.1'
-    compile 'com.github.liheyuan:lmsia-commons-http:0.0.1'
+    compile 'com.github.liheyuan:lmsia-thrift-server:0.0.2'
+    compile 'com.github.liheyuan:lmsia-commons-http:0.0.5'
+    compile 'com.github.liheyuan:lmsia-graceful-shutdown:0.0.1'
 
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 }

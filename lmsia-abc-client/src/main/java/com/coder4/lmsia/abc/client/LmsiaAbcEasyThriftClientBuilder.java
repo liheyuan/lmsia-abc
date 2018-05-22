@@ -8,9 +8,9 @@ import com.coder4.lmsia.thrift.client.builder.EasyThriftClientBuilder;
 /**
  * @author coder4
  */
-public class LmsiaAbcEasyClientBuilder extends EasyThriftClientBuilder<Client> {
+public class LmsiaAbcEasyThriftClientBuilder extends EasyThriftClientBuilder<Client> {
 
-    public LmsiaAbcEasyClientBuilder(String host, int port) {
+    public LmsiaAbcEasyThriftClientBuilder(String host, int port) {
         setThriftClass(LmsiaAbcThrift.class);
 
         setHost(host);
@@ -18,7 +18,7 @@ public class LmsiaAbcEasyClientBuilder extends EasyThriftClientBuilder<Client> {
     }
 
     public static ThriftClient<Client> buildClient(String host, int port) {
-        return new LmsiaAbcEasyClientBuilder(host, port).build();
+        return new LmsiaAbcEasyThriftClientBuilder(host, port).build();
     }
 
 }

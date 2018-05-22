@@ -4,9 +4,6 @@ management:
     port: 8081
     security.enabled: false
 
-# Enable shutdown
-endpoints.shutdown.enabled: true
-
 # Thrift server config
 lmsiaAbcThriftServer:
   port: 3000

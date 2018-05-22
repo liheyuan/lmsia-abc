@@ -18,7 +18,7 @@ import java.util.concurrent.Future;
 public class LmsiaAbcEasyClientTest {
 
     public static void test1() {
-        ThriftClient<Client> client = LmsiaAbcEasyClientBuilder
+        ThriftClient<Client> client = LmsiaAbcEasyThriftClientBuilder
                 .buildClient("127.0.0.1", 3000);
 
         long startTime = System.currentTimeMillis();
@@ -31,7 +31,7 @@ public class LmsiaAbcEasyClientTest {
     }
 
     public static void test2() throws Exception {
-        ThriftClient<LmsiaAbcThrift.Client> client = LmsiaAbcEasyClientBuilder
+        ThriftClient<LmsiaAbcThrift.Client> client = LmsiaAbcEasyThriftClientBuilder
                 .buildClient("127.0.0.1", 3000);
 
         Future<String> fRet = client.asyncCall(cli -> cli.sayHi());
