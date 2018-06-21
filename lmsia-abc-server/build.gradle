@@ -4,10 +4,16 @@ dependencies {
 
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-actuator'
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    compile 'org.projectlombok:lombok:1.16.8'
+
+    compile 'mysql:mysql-connector-java:5.1.9'
 
     compile 'com.github.liheyuan:lmsia-thrift-server:0.0.2'
-    compile 'com.github.liheyuan:lmsia-commons-http:0.0.5'
+    compile 'com.github.liheyuan:lmsia-commons-http:0.0.6'
     compile 'com.github.liheyuan:lmsia-graceful-shutdown:0.0.1'
 
-    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-all:1.9.5'
 }
