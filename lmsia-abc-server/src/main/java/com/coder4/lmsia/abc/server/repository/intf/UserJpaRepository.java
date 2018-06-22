@@ -11,6 +11,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -24,5 +25,10 @@ public interface UserJpaRepository extends JpaRepository<UserForJpa, Long> {
             value = "SELECT * FROM `user` ORDER BY `id` DESC LIMIT 1",
             nativeQuery = true)
     Optional<UserForJpa> findLatestUser();
+
+    @Query(
+            value = "SELECT * FROM `user` WHERE `id` = ?1",
+            nativeQuery = true)
+    Optional<UserForJpa> findUserById(long userId);
 
 }

@@ -28,7 +28,9 @@ public class UserForJpaLogicImpl implements UserForJpaLogic {
 
     @Override
     public UserVO getUser(long userId) {
-        UserForJpa user = Optional.ofNullable(userJpaRepository.findOne(userId))
+//        UserForJpa user = Optional.ofNullable(userJpaRepository.findOne(userId))
+//                .orElseThrow(() -> new Http404NotFoundException());
+        UserForJpa user = userJpaRepository.findUserById(userId)
                 .orElseThrow(() -> new Http404NotFoundException());
         return UserForJpaWrapper.wrap(user);
     }
