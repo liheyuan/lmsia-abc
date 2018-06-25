@@ -24,6 +24,9 @@ spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDiale
 spring.jpa.hibernate.ddl-auto: validate
 spring.jpa.hibernate.naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
+# memcached
+memcached.serverList: "127.0.0.1:11211"
+
 # Profiles
 spring:
   profiles.active: test,local
