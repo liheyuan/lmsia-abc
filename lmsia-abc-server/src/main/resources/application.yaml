@@ -25,7 +25,10 @@ spring.jpa.hibernate.ddl-auto: validate
 spring.jpa.hibernate.naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
 # memcached
-memcached.serverList: "127.0.0.1:11211"
+memcached.serverList: "192.168.99.100:11211"
+
+# redis
+redis.server: "192.168.99.100:6379"
 
 # Profiles
 spring:
