@@ -30,6 +30,11 @@ memcached.serverList: "192.168.99.100:11211"
 # redis
 redis.server: "192.168.99.100:6379"
 
+# rocket mq
+spring.rocketmq:
+    nameServer: 127.0.0.1:9876
+    producer.group: lmsia-abc
+
 # Profiles
 spring:
   profiles.active: test,local
