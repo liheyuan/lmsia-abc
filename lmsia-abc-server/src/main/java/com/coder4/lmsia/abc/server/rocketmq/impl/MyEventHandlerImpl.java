@@ -30,9 +30,8 @@ public class MyEventHandlerImpl implements MyEventHandler, RocketMQListener<MyEv
     public void send(MyEvent event) {
         rocketMQTemplate.convertAndSend(TOCPIC, event);
     }
-
     @Override
-    public void onMessage(MyEvent message) {
-        LOG.info("receive message, data = {}", message.getData());
+    public void onMessage(MyEvent event) {
+        LOG.info("receive event, id = {}", event.getId());
     }
 }

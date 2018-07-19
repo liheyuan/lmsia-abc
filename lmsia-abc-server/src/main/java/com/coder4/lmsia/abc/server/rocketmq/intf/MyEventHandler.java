@@ -9,5 +9,4 @@ public interface MyEventHandler {
 
     void send(MyEvent event);
 
-
 }

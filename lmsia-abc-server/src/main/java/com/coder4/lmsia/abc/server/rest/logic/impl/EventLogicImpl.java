@@ -17,7 +17,7 @@ public class EventLogicImpl implements EventLogic {
 
     @Override
     public void sendEvent() {
-        for (int i = 0; i < 500; i++) {
+        for (int i = 0; i < 1; i++) {
             myEventHandler.send(new MyEvent(i));
         }
     }

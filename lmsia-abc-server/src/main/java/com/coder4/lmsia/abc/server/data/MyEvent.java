@@ -14,6 +14,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class MyEvent implements Serializable {
 
-    private long data;
+    private long id;
 
 }

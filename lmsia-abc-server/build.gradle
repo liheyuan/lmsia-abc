@@ -12,6 +12,7 @@ dependencies {
 
     compile 'com.github.liheyuan:lmsia-thrift-server:0.0.2'
     compile 'com.github.liheyuan:lmsia-commons-http:0.0.6'
+    compile 'com.github.liheyuan:lmsia-trace:0.0.1'
     compile 'com.github.liheyuan:lmsia-graceful-shutdown:0.0.1'
     compile 'com.github.liheyuan:lmsia-redis:0.0.4'
     compile 'com.github.liheyuan:lmsia-cache:0.0.4'
