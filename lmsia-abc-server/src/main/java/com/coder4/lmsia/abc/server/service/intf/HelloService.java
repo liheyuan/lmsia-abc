@@ -7,4 +7,6 @@ public interface HelloService {
 
     String getHello();
 
+    String concat(String a, String b);
+
 }

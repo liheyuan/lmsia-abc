@@ -16,8 +16,7 @@ public class ThriftServerHandler implements LmsiaAbcThrift.Iface {
     private HelloService helloService;
 
     @Override
-    public String sayHi() throws TException {
-        return helloService.getHello();
+    public String concat(String a, String b) throws TException {
+        return helloService.concat(a, b);
     }
-
 }

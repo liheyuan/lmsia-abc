@@ -7,7 +7,7 @@ dependencies {
 
     compile 'org.springframework.boot:spring-boot-autoconfigure'
 
-    compile 'com.github.liheyuan:lmsia-thrift-client:0.0.2'
+    compile 'com.github.liheyuan:lmsia-thrift-client:0.0.6'
 
 }
 
