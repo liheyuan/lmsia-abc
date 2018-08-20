@@ -19,6 +19,8 @@ dependencies {
 
     compile 'com.qianmi:spring-boot-starter-rocketmq:1.1.0-RELEASE'
 
+    compile 'io.sentry:sentry-logback:1.7.5'
+
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-all:1.9.5'
 }

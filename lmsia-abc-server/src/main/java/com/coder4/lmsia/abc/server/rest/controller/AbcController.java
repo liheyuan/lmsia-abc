@@ -24,6 +24,9 @@ public class AbcController {
     @GetMapping(value = "/")
     public String hello() {
         LOG.info("before");
+        if (true) {
+            throw new RuntimeException("haha");
+        }
         return abcLogic.getHello();
     }
 
