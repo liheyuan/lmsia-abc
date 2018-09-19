@@ -1,6 +1,7 @@
 package com.coder4.lmsia.abc.server.rest.controller;
 
 import com.coder4.lmsia.abc.constant.LmsiaAbcConstant;
+import com.coder4.lmsia.abc.server.configuration.TestConfig;
 import com.coder4.lmsia.abc.server.rest.logic.intf.AbcLogic;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,8 +22,12 @@ public class AbcController {
     @Autowired
     private AbcLogic abcLogic;
 
+    @Autowired
+    private TestConfig testConfig;
+
     @GetMapping(value = "/")
     public String hello() {
+        LOG.info("config key = {}, enable = {}", testConfig.getKey(), testConfig.isEnable());
         LOG.info("before");
         if (true) {
             throw new RuntimeException("haha");

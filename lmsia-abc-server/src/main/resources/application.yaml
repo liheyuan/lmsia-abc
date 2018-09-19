@@ -4,10 +4,8 @@ management:
     port: 8081
     security.enabled: false
 
-# Thrift server config
-lmsiaAbcThriftServer:
-  port: 3000
-  name: lmsia-abc-thrift-server
+# micro-service name
+msName: lmsia-abc
 
 # MySQL Default Datasource
 spring.datasource:
@@ -33,7 +31,7 @@ redis.server: "192.168.99.100:6379"
 # rocket mq
 spring.rocketmq:
     nameServer: 127.0.0.1:9876
-    producer.group: lmsia-abc
+    producer.group: ${msName}
 
 # Profiles
 spring:
