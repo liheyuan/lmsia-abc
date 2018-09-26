@@ -3,6 +3,7 @@ package com.coder4.lmsia.abc.server.rest.controller;
 import com.coder4.lmsia.abc.constant.LmsiaAbcConstant;
 import com.coder4.lmsia.abc.server.configuration.TestConfig;
 import com.coder4.lmsia.abc.server.rest.logic.intf.AbcLogic;
+import com.coder4.lmsia.hystrix.BaseHystrixCommend;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,12 +28,21 @@ public class AbcController {
 
     @GetMapping(value = "/")
     public String hello() {
+        return new BaseHystrixCommend<String>("abc", this::helloReal, this::helloFallback).execute();
+    }
+
+    private String helloReal() {
         LOG.info("config key = {}, enable = {}", testConfig.getKey(), testConfig.isEnable());
         LOG.info("before");
         if (true) {
             throw new RuntimeException("haha");
         }
         return abcLogic.getHello();
+    }
+
+    private String helloFallback() {
+        LOG.info("hello fb");
+        return "Hello, fallback";
     }
 
 
