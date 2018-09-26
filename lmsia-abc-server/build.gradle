@@ -17,7 +17,7 @@ dependencies {
     compile 'com.github.liheyuan:lmsia-redis:0.0.4'
     compile 'com.github.liheyuan:lmsia-cache:0.0.4'
     compile 'com.github.liheyuan:lmsia-cfg4j:0.0.3'
-    compile 'com.github.liheyuan:lmsia-hystrix:0.0.3'
+    compile 'com.github.liheyuan:lmsia-hystrix:0.0.4'
 
     compile 'com.qianmi:spring-boot-starter-rocketmq:1.1.0-RELEASE'
 
