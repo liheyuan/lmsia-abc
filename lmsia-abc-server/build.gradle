@@ -7,17 +7,19 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-data-jpa'
 
     compile 'org.projectlombok:lombok:1.16.8'
+    compileOnly 'com.google.guava:guava:26.0-jre'
 
     compile 'mysql:mysql-connector-java:5.1.9'
 
     compile 'com.github.liheyuan:lmsia-thrift-server:0.0.5'
-    compile 'com.github.liheyuan:lmsia-commons-http:0.0.6'
+    compile 'com.github.liheyuan:lmsia-commons-http:0.0.7'
     compile 'com.github.liheyuan:lmsia-trace:0.0.1'
     compile 'com.github.liheyuan:lmsia-graceful-shutdown:0.0.1'
     compile 'com.github.liheyuan:lmsia-redis:0.0.4'
     compile 'com.github.liheyuan:lmsia-cache:0.0.4'
     compile 'com.github.liheyuan:lmsia-cfg4j:0.0.3'
     compile 'com.github.liheyuan:lmsia-hystrix:0.0.4'
+    compile 'com.github.liheyuan:lmsia-ratelimit:0.0.7'
 
     compile 'com.qianmi:spring-boot-starter-rocketmq:1.1.0-RELEASE'
 
