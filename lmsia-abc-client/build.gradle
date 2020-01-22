@@ -2,6 +2,10 @@ bootJar {
     enabled = false
 }
 
+jar {
+    enabled = true
+}
+
 dependencies {
     compile project(':lmsia-abc-common') 
 

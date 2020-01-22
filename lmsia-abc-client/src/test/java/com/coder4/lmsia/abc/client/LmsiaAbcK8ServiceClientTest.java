@@ -25,7 +25,7 @@ public class LmsiaAbcK8ServiceClientTest {
         long startTime = System.currentTimeMillis();
         for (int i = 0; i < 50000; i++) {
             try {
-                String str = client.call(cli -> cli.sayHi());
+                // String str = client.call(cli -> cli.sayHi());
             } catch (Exception e) {
                 i--;
             }

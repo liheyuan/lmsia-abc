@@ -4,6 +4,10 @@ bootJar {
     enabled = false
 }
 
+jar {
+    enabled = true
+}
+
 dependencies {
     compile 'org.apache.thrift:libthrift:0.9.3'
 }

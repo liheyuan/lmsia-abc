@@ -30,7 +30,7 @@ public class LmsiaAbcJob implements CommandLineRunner {
         LOG.info("job started LmsiaAbcJob");
 
         // rpc call
-        LOG.info(client.call(cli -> cli.sayHi()));
+        // LOG.info(client.call(cli -> cli.sayHi()));
 
         LOG.info("job ended LmsiaAbcJob");
         System.exit(0);

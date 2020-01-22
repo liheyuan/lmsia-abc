@@ -22,9 +22,9 @@ public class LmsiaAbcEasyClientTest {
                 .buildClient("127.0.0.1", 3000);
 
         long startTime = System.currentTimeMillis();
-        for (int i = 0; i < 50000; i++) {
-            String ret = client.call(cli -> cli.sayHi());
-        }
+//        for (int i = 0; i < 50000; i++) {
+//            String ret = client.call(cli -> cli.sayHi());
+//        }
         long endTime = System.currentTimeMillis();
         System.out.println(endTime - startTime);
         //System.out.println(ret);
@@ -34,8 +34,8 @@ public class LmsiaAbcEasyClientTest {
         ThriftClient<LmsiaAbcThrift.Client> client = LmsiaAbcEasyThriftClientBuilder
                 .buildClient("127.0.0.1", 3000);
 
-        Future<String> fRet = client.asyncCall(cli -> cli.sayHi());
-        System.out.println(fRet.get());
+        // Future<String> fRet = client.asyncCall(cli -> cli.sayHi());
+        //System.out.println(fRet.get());
     }
 
     public static void main(String[] args) throws Exception {

@@ -1,6 +1,7 @@
 package com.coder4.lmsia.abc.server;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
@@ -16,7 +17,7 @@ public class LmsiaAbcApplication {
         SpringApplication application = new SpringApplication(LmsiaAbcApplication.class);
 
         // To disabled web environment, change `true` to `false`
-        application.setWebEnvironment(true);
+        application.setWebApplicationType(WebApplicationType.SERVLET);
         application.run(args);
     }
 }
